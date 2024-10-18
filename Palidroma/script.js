@@ -26,3 +26,5 @@ function isPalindrome(userWord) {
   // restituisco il risultato all'utente
   return result;
 }
+
+alert(isPalindrome(userWord));
