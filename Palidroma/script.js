@@ -4,13 +4,15 @@
 
 // chiedo all'utente di inserire una parola
 const userWord = prompt("Digiti una parola");
-console.log(`La tua parola è: "${userWord}"`);
 
 // controllo che la parola sia valida
+checkedUserWord = userWord.toString();
+console.log(`La tua parola è: "${checkedUserWord}"`);
+
 // verifico se la parola letta al contrario è uguale
 
-function isPalindrome(userWord) {
-  let splittedUserWord = userWord.split("");
+function isPalindrome(checkedUserWord) {
+  let splittedUserWord = checkedUserWord.split("");
   const reversingWord = splittedUserWord.reverse();
   // console.log(reversingWord);
 
@@ -19,7 +21,7 @@ function isPalindrome(userWord) {
 
   // verifico
   result =
-    userWord == reversedUserWord
+    checkedUserWord == reversedUserWord
       ? "La parola scelta è palindroma"
       : "La parola scelta non è palindroma";
 
@@ -27,4 +29,4 @@ function isPalindrome(userWord) {
   return result;
 }
 
-alert(isPalindrome(userWord));
+alert(isPalindrome(checkedUserWord));
