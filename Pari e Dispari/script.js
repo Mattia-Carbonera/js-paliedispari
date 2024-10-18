@@ -10,6 +10,7 @@
 const userEvenOdd = prompt('Inserisca se "pari" o "dispari"').toString();
 const userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
 const maxRandom = 5;
+let finalResult = "";
 
 console.log("pari o dispari user " + userEvenOdd);
 console.log("numero user " + userNumb);
@@ -38,4 +39,39 @@ const finalSum = numberSum(userNumb, randomNumber);
 console.log(finalSum);
 
 // stabilisco pari o dispari
+
+function evenOrOdd(sum) {
+  let evenOdd;
+
+  if (sum % 2 !== 0) {
+    evenOdd = false;
+  } else {
+    evenOdd = true;
+  }
+
+  if (evenOdd === false) {
+    return "è dispari";
+  } else {
+    return "è pari";
+  }
+}
+
+const evenOdd = evenOrOdd(finalSum);
+console.log(evenOdd);
+
 // restituisco il vincitore
+
+if (
+  (userEvenOdd == "pari" && evenOdd == "è pari") ||
+  (userEvenOdd == "dispari" && evenOdd == "è dispari")
+) {
+  finalResult = "Complimenti hai vinto!";
+} else {
+  finalResult = "Questa volta ha vinto il computer...";
+}
+
+alert(`La sua scelta è stata ${userEvenOdd}\n
+Ed il numero scelto da lei è ${userNumb}\n
+Il numero scelto dal computer è ${randomNumber}\n
+La somma dei due numeri è ${finalSum} ed è un numero ${evenOdd}\n
+${finalResult}`);
