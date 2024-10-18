@@ -16,62 +16,70 @@ console.log("pari o dispari user " + userEvenOdd);
 console.log("numero user " + userNumb);
 
 // controllo i dati inseriti dall'utente
+let userNumbCheck = userNumb > 0 && userNumb < 6 ? true : false;
+let userEvenOddCheeck =
+  userEvenOdd == "pari" || userEvenOdd == "dispari" ? true : false;
+if (userNumbCheck && userEvenOddCheeck) {
+  // genero un numero randomico per i computer
 
-// genero un numero randomico per i computer
+  function computerNum(maxRandom) {
+    const computerRandom = Math.floor(Math.random() * maxRandom) + 1;
 
-function computerNum(maxRandom) {
-  const computerRandom = Math.floor(Math.random() * maxRandom) + 1;
-
-  return computerRandom;
-}
-
-const randomNumber = computerNum(maxRandom);
-console.log("numero generato casualmente " + randomNumber);
-
-// sommo i numeri
-
-function numberSum(userNum, randomicNum) {
-  const result = userNum + randomicNum;
-  return result;
-}
-
-const finalSum = numberSum(userNumb, randomNumber);
-console.log(finalSum);
-
-// stabilisco pari o dispari
-
-function evenOrOdd(sum) {
-  let evenOdd;
-
-  if (sum % 2 !== 0) {
-    evenOdd = false;
-  } else {
-    evenOdd = true;
+    return computerRandom;
   }
 
-  if (evenOdd === false) {
-    return "è dispari";
-  } else {
-    return "è pari";
+  const randomNumber = computerNum(maxRandom);
+  console.log("numero generato casualmente " + randomNumber);
+
+  // sommo i numeri
+
+  function numberSum(userNum, randomicNum) {
+    const result = userNum + randomicNum;
+    return result;
   }
-}
 
-const evenOdd = evenOrOdd(finalSum);
-console.log(evenOdd);
+  const finalSum = numberSum(userNumb, randomNumber);
+  console.log(finalSum);
 
-// restituisco il vincitore
+  // stabilisco pari o dispari
 
-if (
-  (userEvenOdd == "pari" && evenOdd == "è pari") ||
-  (userEvenOdd == "dispari" && evenOdd == "è dispari")
-) {
-  finalResult = "Complimenti hai vinto!";
-} else {
-  finalResult = "Questa volta ha vinto il computer...";
-}
+  function evenOrOdd(sum) {
+    let evenOdd;
 
-alert(`La sua scelta è stata ${userEvenOdd}\n
+    if (sum % 2 !== 0) {
+      evenOdd = false;
+    } else {
+      evenOdd = true;
+    }
+
+    if (evenOdd === false) {
+      return "è dispari";
+    } else {
+      return "è pari";
+    }
+  }
+
+  const evenOdd = evenOrOdd(finalSum);
+  console.log(evenOdd);
+
+  // restituisco il vincitore
+
+  if (
+    (userEvenOdd == "pari" && evenOdd == "è pari") ||
+    (userEvenOdd == "dispari" && evenOdd == "è dispari")
+  ) {
+    finalResult = "Complimenti hai vinto!";
+  } else {
+    finalResult = "Questa volta ha vinto il computer...";
+  }
+
+  alert(`La sua scelta è stata ${userEvenOdd}\n
 Ed il numero scelto da lei è ${userNumb}\n
 Il numero scelto dal computer è ${randomNumber}\n
 La somma dei due numeri è ${finalSum} ed è un numero ${evenOdd}\n
 ${finalResult}`);
+} else {
+  alert("Ricontrollare i dati inseriti");
+  const userEvenOdd = prompt('Inserisca se "pari" o "dispari"').toString();
+  const userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
+}
