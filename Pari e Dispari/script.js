@@ -12,8 +12,8 @@ let finalResult = "";
 let finish = false;
 
 while (finish == false) {
-  const userEvenOdd = prompt('Inserisca se "pari" o "dispari"').toString();
-  const userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
+  let userEvenOdd = prompt('Inserisca se "pari" o "dispari"').toString();
+  let userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
   // console.log("pari o dispari user " + userEvenOdd);
   // console.log("numero user " + userNumb);
 
@@ -84,8 +84,6 @@ while (finish == false) {
     finish = true;
   } else {
     alert("Ricontrollare i dati inseriti");
-    const userEvenOdd = prompt('Inserisca se "pari" o "dispari"').toString();
-    const userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
     finish = false;
   }
 }
