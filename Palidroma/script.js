@@ -8,4 +8,21 @@ console.log(`La tua parola è: "${userWord}"`);
 
 // controllo che la parola sia valida
 // verifico se la parola letta al contrario è uguale
-// restituisco il risultato all'utente
+
+function isPalindrome(userWord) {
+  let splittedUserWord = userWord.split("");
+  const reversingWord = splittedUserWord.reverse();
+  // console.log(reversingWord);
+
+  const reversedUserWord = reversingWord.join("");
+  console.log(reversedUserWord);
+
+  // verifico
+  result =
+    userWord == reversedUserWord
+      ? "La parola scelta è palindroma"
+      : "La parola scelta non è palindroma";
+
+  // restituisco il risultato all'utente
+  return result;
+}
