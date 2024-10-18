@@ -12,8 +12,8 @@ const userNumb = parseInt(prompt("Inserisca un numero da 1 a 5"));
 const maxRandom = 5;
 let finalResult = "";
 
-console.log("pari o dispari user " + userEvenOdd);
-console.log("numero user " + userNumb);
+// console.log("pari o dispari user " + userEvenOdd);
+// console.log("numero user " + userNumb);
 
 // controllo i dati inseriti dall'utente
 let userNumbCheck = userNumb > 0 && userNumb < 6 ? true : false;
@@ -29,7 +29,7 @@ if (userNumbCheck && userEvenOddCheeck) {
   }
 
   const randomNumber = computerNum(maxRandom);
-  console.log("numero generato casualmente " + randomNumber);
+  //   console.log("numero generato casualmente " + randomNumber);
 
   // sommo i numeri
 
@@ -39,7 +39,7 @@ if (userNumbCheck && userEvenOddCheeck) {
   }
 
   const finalSum = numberSum(userNumb, randomNumber);
-  console.log(finalSum);
+  //   console.log(finalSum);
 
   // stabilisco pari o dispari
 
@@ -60,7 +60,7 @@ if (userNumbCheck && userEvenOddCheeck) {
   }
 
   const evenOdd = evenOrOdd(finalSum);
-  console.log(evenOdd);
+  //   console.log(evenOdd);
 
   // restituisco il vincitore
 
